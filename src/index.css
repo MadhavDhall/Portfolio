@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+.theme-btn {
+    background-color: #A53DFF;
+    @apply px-5 py-3.5 text-white rounded-lg;
+
+    &:hover {
+        @apply text-white;
+        background-color: #8A30D6;
+    }
+}
+
+h1 {
+    @apply text-5xl;
+}
+
+h4 {
+    @apply text-2xl;
+}
+
+h3 {
+    @apply text-3xl;
+}
