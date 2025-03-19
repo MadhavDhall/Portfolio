@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
-a {
-    /* @apply text-large; */
-    color: #333333;
+nav {
+    a {
+        color: #333333;
 
-    &:hover {
-        color: #222222;
+        &:hover {
+            color: #222222;
+        }
     }
 }
 

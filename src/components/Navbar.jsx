@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import "./style/Navbar.css"
+import "./style//Navbar.module.css"
 import { LuMenu } from "react-icons/lu";
 
-const Navbar = () => {
+const Navbar = ({ links }) => {
     const [isOpen, setIsOpen] = React.useState(false);
 
     useEffect(() => {
@@ -21,20 +21,31 @@ const Navbar = () => {
     return (
         <nav className="p-5">
             <div className="flex flex-row justify-around">
-                <a href="/" className="text-4xl">Madhav Dhall</a>
+                <a href="/" className="text-xl flex flex-row gap-2 items-center mb-auto">
+                    <span className="bg-purple-500 rounded-full text-white p-2">MD</span>
+                    <span>Madhav Dhall</span>
+                </a>
 
                 <ul className="hidden md:flex md:flex-row md:justify-around list-none gap-10">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="#work">My Work</a></li>
-                    <li><a href="#contact" className="theme-btn">Contact</a></li>
+                    {
+                        links.map(({ title, href, btn }, key) => {
+                            return (
+                                <li key={key}><a href={href} className={btn ? "theme-btn" : ""}>{title}</a></li>
+                            )
+                        })
+                    }
                 </ul>
                 <LuMenu className="md:hidden text-4xl cursor-pointer" onClick={() => setIsOpen(!isOpen)} />
             </div>
 
             <ul className={"flex-col justify-center text-center md:hidden list-none gap-5 my-4" + (isOpen ? " flex" : " hidden")}>
-                <li><a href="/">Home</a></li>
-                <li><a href="#work">My Work</a></li>
-                <li><a href="#contact" className="theme-btn my-5">Contact</a></li>
+                {
+                    links.map(({ title, href, btn }, key) => {
+                        return (
+                            <li key={key}><a href={href} className={btn ? "theme-btn" : ""}>{title}</a></li>
+                        )
+                    })
+                }
             </ul>
         </nav>
     )

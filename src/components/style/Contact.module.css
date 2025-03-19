@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+input,
+textarea {
+    @apply border-b-2 border-b-gray-100 w-full focus:outline-0 focus:border-b-purple-500 m-0;
+}
+
+input[type="number"] {
+    @apply [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none;
+}
+
+label {
+    @apply group-focus-within:text-purple-500 text-gray-500 text-lg m-0;
+}

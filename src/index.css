@@ -1,13 +1,25 @@
 @import "tailwindcss";
 
+body {
+    overflow-x: hidden;
+}
+
 .theme-btn {
     background-color: #A53DFF;
-    @apply px-5 py-3.5 text-white rounded-lg;
+    @apply px-6 py-3.5 text-white rounded-lg;
 
     &:hover {
         @apply text-white;
         background-color: #8A30D6;
     }
+}
+
+.flex-row {
+    flex-wrap: wrap;
+}
+
+.theme-btn-outline {
+    @apply text-purple-500 rounded-md border border-purple-500 w-fit px-5 py-3 flex flex-row content-center hover:bg-[#A53DFF] hover:text-white;
 }
 
 h1 {
@@ -20,4 +32,17 @@ h4 {
 
 h3 {
     @apply text-3xl;
+}
+
+h2 {
+    @apply text-4xl;
+}
+
+.h-screen {
+    min-height: 100vh;
+    height: fit-content;
+}
+
+label {
+    @apply group-focus-within:text-purple-500 text-gray-500 text-lg m-0;
 }
